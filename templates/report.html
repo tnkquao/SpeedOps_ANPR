@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Example 2</title>
+    <!--<link rel="stylesheet" href="style.css" media="all" />-->
+  </head>
+  <body>
+    <header class="clearfix">
+      <div id="logo">
+        <!--<img src="dvla.jpg">-->
+      </div>
+      
+      <div id="company">
+        <h2 class="name">Driver and Vehicle Licensing Authority</h2>
+        <div>1 JAWAHARLAL NEHRU ROAD,CANTOMENT</div>
+        <div>PHONE:(233) 030-2764529</div>
+        <div><a href="mailto:company@example.com">INFO@DVLA.GOV.GH</a></div>
+      </div>
+      </div>
+    </header>
+
+
+    <main>
+          <div id="details" class="clearfix">
+            <div id="client">
+              <div class="to">SPEEDING FINE TO:</div>
+              <h2 class="name">{{ vals.name }}</h2>
+              <div class="address">{{ vals.home_address }}</div>
+              <div class="email"><a href="mailto:john@example.com">{{ vals.contact_2}}</a></div>
+            </div>
+            <div id="invoice">
+              <h2>License Number: {{ vals.license_plate }}</h2>
+              <div class="date">DateTime of Issue: {{ offence.record_date }}</div>
+            </div>
+          </div>
+          <table border="0" cellspacing="0" cellpadding="0">
+            <thead>
+              <tr>
+                <th class="no">#</th>
+                <th colspan="2" class="desc">LOCATION</th>
+                <th class="unit">AMOUNT FINED</th>
+                <th class="total">TOTAL</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="no">01</td>
+                <td colspan="2" class="desc"><h3><Datag>{{ offence.location }}</Datag></h3></td>
+                <td class="unit">{{ offence.amount_fined }}</td>
+                <td class="total">Gh¢{{ offence.amount_fined }}</td>
+              </tr>
+            
+              <tr>
+                <td colspan="2"></td>
+                <td colspan="2">SUBTOTAL</td>
+                <td>Gh¢{{ offence.amount_fined }}</td>
+              </tr>
+              
+              <tr>
+                <td colspan="2"></td>
+                <td colspan="2">GRAND TOTAL</td>
+                <td>Gh¢{{ offence.amount_fined }}</td>
+              </tr>
+            </tfoot>
+          </table>
+
+      <div id="thanks">Thank you!</div>
+      <div id="notices">
+        <div>NOTICE:</div>
+        <div class="notice">A finance charge of 1.5% will be made on unpaid speeding fine after 30 days.</div>
+      </div>
+    </main>
+    <footer>
+      Invoice was created on a computer and is valid without the signature and seal.
+    </footer>
+  </body>
+</html>
